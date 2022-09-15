@@ -18,7 +18,7 @@ struct PlaylistModel: Decodable{
         let etag: String
         let id: String
         let snippet : Snippet
-        let contentDetails : ContentDetails
+        let contentDetails : ContentDetails?
         
         struct Snippet: Decodable {
             let publishedAt : String

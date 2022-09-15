@@ -36,6 +36,44 @@ struct VideoModel: Decodable {
             case statistics
         }
         
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            //id
+            if let id = try? container.decode(VideoId.self, forKey: .id){
+                self.id = id.videoId
+            }
+            else{
+                if let id = try? container.decode(String.self, forKey: .id){
+                    self.id = id
+                }
+                else{
+                    self.id = nil
+                }
+            }
+            //Snippet
+            if let snippet = try? container.decode(Snippet.self, forKey: .snippet){
+                self.snippet = snippet
+            }
+            else{
+                self.snippet = nil
+            }
+            //Statistics
+            if let statistics = try? container.decode(Statistics.self, forKey: .statistics){
+                self.statistics = statistics
+            }
+            else{
+                self.statistics = nil
+            }
+            //contentDetails
+            if let contentDetails = try? container.decode(ContentDetails.self, forKey: .contentDetails){
+                self.contentDetails = contentDetails
+            }
+            else{
+                self.contentDetails = nil
+            }
+            self.kind = try container.decode(String.self, forKey: .kind)
+        }
+        
         struct VideoId: Decodable{
             let kind : String
             let videoId : String
