@@ -10,8 +10,8 @@ import Foundation
 protocol HomeProviderProtocol{
     func getVideos(searchString : String, channelId : String) async throws -> VideoModel
     func getChannel(channelId : String) async throws -> ChannelModel
-    func getPlaylists(channelId : String) async throws -> PlaylistModel
     func getPlaylistItems(playlistId : String) async throws -> PlaylistItemsModel
+    func getPlaylists(channelId : String) async throws -> PlaylistModel
 }
 
 class HomeProvider : HomeProviderProtocol{

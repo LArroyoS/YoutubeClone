@@ -8,13 +8,14 @@
 import Foundation
 
 protocol HomeViewProtocol : AnyObject{
-    func getData(list : [[Any]])
+    func getData(list : [[Any]], sectionTitleList : [String])
 }
 
 class HomePresenter{
     var provider : HomeProviderProtocol
     weak var delegate : HomeViewProtocol?
     private var objectList : [[Any]] = []
+    private var sectionTitleList : [String] = []
     
     init(delegate : HomeViewProtocol, provider : HomeProviderProtocol = HomeProvider()){
         self.provider = provider
@@ -28,6 +29,7 @@ class HomePresenter{
     
     func getHomeObjects() async{
         objectList.removeAll()
+        sectionTitleList.removeAll()
         
         async let channel = try await provider.getChannel(channelId: Constants.channelId).items
         async let playlist = try await provider.getPlaylists(channelId: Constants.channelId).items
@@ -37,18 +39,22 @@ class HomePresenter{
             let (responseChannel, responsePlaylist, responseVideos ) = await (try channel, try playlist, try videos)
             //Index[0]
             objectList.append(responseChannel)
+            sectionTitleList.append("")
             
             if let playlistId = responsePlaylist.first?.id, let playlistItems = await getPlaylistItems(playlistId: playlistId){
                 //Index[1]
-                objectList.append(playlistItems.items)
+                objectList.append(playlistItems.items.filter({$0.snippet.title != "Private Video"}))
+                sectionTitleList.append(responsePlaylist.first?.snippet.title ?? "")
             }
 
             //Index[2]
             objectList.append(responseVideos)
+            sectionTitleList.append("Uploads")
             //Index[3]
             objectList.append(responsePlaylist)
+            sectionTitleList.append("Created Playlist")
             
-            delegate?.getData(list: objectList)
+            delegate?.getData(list: objectList, sectionTitleList: sectionTitleList)
             
         }
         catch{

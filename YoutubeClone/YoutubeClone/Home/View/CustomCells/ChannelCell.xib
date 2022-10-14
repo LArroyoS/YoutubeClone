@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="351" id="KGk-i7-Jjw" userLabel="Channel Cell" customClass="ChannelCell" customModule="YoutubeClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="351"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="351"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channelBanner" translatesAutoresizingMaskIntoConstraints="NO" id="DLF-sD-Nqk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="104" id="I9I-Gc-J40"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="3FA-J7-EOe">
+                        <rect key="frame" x="13" y="104" width="349" height="247"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FqB-co-loV">
+                                <rect key="frame" x="0.0" y="0.0" width="349" height="70"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channelsProfile" translatesAutoresizingMaskIntoConstraints="NO" id="LRO-M4-giP">
+                                        <rect key="frame" x="149" y="9.6666666666666714" width="51" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="GWx-5a-A4v"/>
+                                            <constraint firstAttribute="width" constant="51" id="ISV-96-87A"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LRO-M4-giP" firstAttribute="centerX" secondItem="FqB-co-loV" secondAttribute="centerX" id="MYb-Ka-qF6"/>
+                                    <constraint firstAttribute="height" constant="70" id="qVf-tt-6Al"/>
+                                    <constraint firstItem="LRO-M4-giP" firstAttribute="centerY" secondItem="FqB-co-loV" secondAttribute="centerY" id="tmf-d3-XOf"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leonardo Arroyo Sánchez" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cB4-gL-Zvn">
+                                <rect key="frame" x="0.0" y="70" width="349" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" name="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-jb-ujY">
+                                <rect key="frame" x="0.0" y="95.333333333333343" width="349" height="111"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SUBSCRIBED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKU-RM-mJ2">
+                                        <rect key="frame" x="128.66666666666666" y="8" width="92" height="94"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="grayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" translatesAutoresizingMaskIntoConstraints="NO" id="zfM-e6-HMR">
+                                        <rect key="frame" x="220.66666666666666" y="46" width="16" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="3Iq-M2-N7k"/>
+                                            <constraint firstAttribute="width" constant="16" id="TO3-5P-GKh"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="oKU-RM-mJ2" secondAttribute="bottom" constant="9" id="EQh-xP-jhE"/>
+                                    <constraint firstItem="oKU-RM-mJ2" firstAttribute="centerX" secondItem="JcC-jb-ujY" secondAttribute="centerX" id="Iik-em-nrx"/>
+                                    <constraint firstItem="zfM-e6-HMR" firstAttribute="centerY" secondItem="oKU-RM-mJ2" secondAttribute="centerY" id="ihb-cK-2Ee"/>
+                                    <constraint firstItem="oKU-RM-mJ2" firstAttribute="top" secondItem="JcC-jb-ujY" secondAttribute="top" constant="8" id="m8D-V8-Wd4"/>
+                                    <constraint firstItem="zfM-e6-HMR" firstAttribute="leading" secondItem="oKU-RM-mJ2" secondAttribute="trailing" id="riY-0n-1cm"/>
+                                    <constraint firstItem="zfM-e6-HMR" firstAttribute="top" secondItem="JcC-jb-ujY" secondAttribute="top" constant="46" id="u1v-dg-YtM"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="225 subscribers - 16 videos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYG-ho-0eg">
+                                <rect key="frame" x="0.0" y="206.33333333333331" width="349" height="14.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="whiteColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMP-7o-Ne6">
+                                <rect key="frame" x="0.0" y="220.66666666666669" width="349" height="26.333333333333343"/>
+                                <string key="text">Bienvenido a mi canal, soy Victor Roldán y estoy aquí para ayudar a formarte como iOS Developer utilizando principalmente Swift y SwiftUI.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" name="grayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="A4F-8G-1tM">
+                        <rect key="frame" x="359" y="335" width="10" height="6.3333333333333144"/>
+                        <color key="tintColor" name="grayColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="6oQ-af-bc2"/>
+                            <constraint firstAttribute="width" constant="10" id="g01-MA-t2X"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DLF-sD-Nqk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7kq-fZ-4Qa"/>
+                    <constraint firstAttribute="bottom" secondItem="3FA-J7-EOe" secondAttribute="bottom" id="EMM-4q-8TA"/>
+                    <constraint firstAttribute="trailing" secondItem="3FA-J7-EOe" secondAttribute="trailing" constant="13" id="GhY-co-wzF"/>
+                    <constraint firstItem="3FA-J7-EOe" firstAttribute="top" secondItem="DLF-sD-Nqk" secondAttribute="bottom" id="NM5-Se-bT4"/>
+                    <constraint firstItem="A4F-8G-1tM" firstAttribute="centerY" secondItem="uMP-7o-Ne6" secondAttribute="centerY" id="Z9Y-bX-o9q"/>
+                    <constraint firstAttribute="trailing" secondItem="A4F-8G-1tM" secondAttribute="trailing" constant="6" id="bf2-R0-ZLL"/>
+                    <constraint firstItem="DLF-sD-Nqk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hUg-li-4N4"/>
+                    <constraint firstItem="3FA-J7-EOe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="13" id="onr-Y8-jIy"/>
+                    <constraint firstAttribute="trailing" secondItem="DLF-sD-Nqk" secondAttribute="trailing" id="zEX-Hf-Pth"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="backgroundColor"/>
+            <connections>
+                <outlet property="bannerImage" destination="DLF-sD-Nqk" id="yuG-zf-IXX"/>
+                <outlet property="bellImage" destination="zfM-e6-HMR" id="atZ-67-lwc"/>
+                <outlet property="channelInfoLabel" destination="uMP-7o-Ne6" id="hcf-gm-JnD"/>
+                <outlet property="channelTitle" destination="cB4-gL-Zvn" id="CJ4-Rm-YJB"/>
+                <outlet property="profileImage" destination="LRO-M4-giP" id="sTP-f5-PMb"/>
+                <outlet property="subscribeLabel" destination="oKU-RM-mJ2" id="Sgw-w7-dJ0"/>
+                <outlet property="susbcriberNumbersLabel" destination="VYG-ho-0eg" id="VKX-OH-c0F"/>
+            </connections>
+            <point key="canvasLocation" x="11.538461538461538" y="97.037914691943129"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bell" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="channelBanner" width="512" height="288"/>
+        <image name="channelsProfile" width="88" height="88"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <namedColor name="backgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grayColor">
+            <color red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteColor">
+            <color red="0.12549019607843137" green="0.12549019607843137" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
